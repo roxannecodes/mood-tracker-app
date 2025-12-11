@@ -1,7 +1,7 @@
 import { useState } from "react";
-import MoodForm from "./components/MoodLogger/MoodForm";
-import MoodDashboard from "./components/Dashboard/MoodDashboard";
-import "./App.css";
+import MoodForm from "../components/MoodLogger/MoodForm";
+import MoodDashboard from "../components/Dashboard/MoodDashboard";
+import "/App.css";
 
 function App() {
   const [view, setView] = useState("form"); // 'form' or 'dashboard'
