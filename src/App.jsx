@@ -19,7 +19,7 @@ function App() {
   return (
     <div className="app">
       <header className="app-header">
-        <h1>🌈 Holiday Mood Tracker</h1>
+        <h1>🎄Holiday Mood Tracker</h1>
         <nav>
           <button
             className={view === "form" ? "active" : ""}
