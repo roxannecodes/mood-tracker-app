@@ -1,6 +1,6 @@
 import { useState } from "react";
-import MoodForm from "../components/MoodLogger/MoodForm";
-import MoodDashboard from "../components/Dashboard/MoodDashboard";
+import MoodForm from "../MoodLogger/MoodForm";
+import MoodDashboard from "../Dashboard/MoodDashboard";
 import "/App.css";
 
 function App() {
