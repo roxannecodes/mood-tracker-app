@@ -1,13 +1,12 @@
 import { useState } from "react";
-import MoodModal from "../MoodLogger/MoodModal.jsx";
-import MoodDashboard from "../Dashboard/MoodDashboard";
 import Header from "../header/header.jsx";
 import Footer from "../footer/footer.jsx";
+import MoodForm from "../MoodLogger/MoodModal.jsx";
+import MoodDashboard from "../Dashboard/MoodDashboard.jsx";
 import "./App.css";
 
 function App() {
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [view, setView] = useState("dashboard"); // 'dashboard' or 'stats'
 
   // TODO: Implement data loading and state management
   // - Load entries from localStorage
@@ -22,30 +21,26 @@ function App() {
 
   return (
     <div className="app">
-      <Header
-        onLogMoodClick={() => setIsModalOpen(true)}
-        onStatsClick={() => setView(view === "stats" ? "dashboard" : "stats")}
-        currentView={view}
-      />
+      <Header onLogMoodClick={() => setIsModalOpen(true)} />
 
       <main className="app-main">
-        {view === "dashboard" ? (
-          <div className="dashboard">
-            <h2>Your Mood Dashboard</h2>
-            <p>Dashboard content coming soon...</p>
-          </div>
-        ) : (
-          <MoodDashboard entries={[]} stats={null} />
-        )}
+        <MoodDashboard entries={[]} stats={null} />
       </main>
 
       <Footer />
 
       {isModalOpen && (
-        <MoodModal
-          onSubmit={handleMoodSubmit}
-          onClose={() => setIsModalOpen(false)}
-        />
+        <div className="modal-overlay" onClick={() => setIsModalOpen(false)}>
+          <div className="modal-content" onClick={(e) => e.stopPropagation()}>
+            <button
+              className="modal-close"
+              onClick={() => setIsModalOpen(false)}
+            >
+              ×
+            </button>
+            <MoodForm onSubmit={handleMoodSubmit} />
+          </div>
+        </div>
       )}
     </div>
   );

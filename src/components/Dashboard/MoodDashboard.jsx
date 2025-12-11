@@ -1,15 +1,56 @@
-// TODO: Implement dashboard
-// Requirements:
-// - Display statistics (average mood, most common mood, total entries)
-// - Show list of mood entries
-// - Display charts/visualizations (from DS team)
 import "./MoodDashboard.css";
 
 export default function MoodDashboard({ entries, stats }) {
+  // Sample week days for the grid
+  const weekDays = [
+    { day: "Mon", date: "12/9" },
+    { day: "Tue", date: "12/10" },
+    { day: "Wed", date: "12/11" },
+    { day: "Thu", date: "12/12" },
+    { day: "Fri", date: "12/13" },
+    { day: "Sat", date: "12/14" },
+    { day: "Sun", date: "12/15" },
+  ];
+
   return (
     <div className="mood-dashboard">
-      <h2>Stats Dashboard</h2>
-      <p>Dashboard content coming soon...</p>
+      <div className="dashboard-header">
+        <h2>*A mood for every day of the week*</h2>
+      </div>
+
+      <div className="mood-grid">
+        {weekDays.map((day, index) => (
+          <div key={index} className="mood-card">
+            {index === 0 ? (
+              <div className="add-mood-card">
+                <svg
+                  width="40"
+                  height="40"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                >
+                  <path d="M12 20h9" />
+                  <path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z" />
+                </svg>
+                <p>Add mood</p>
+              </div>
+            ) : (
+              <div className="empty-mood-card">
+                <p className="day-label">{day.day}</p>
+                <p className="date-label">{day.date}</p>
+              </div>
+            )}
+          </div>
+        ))}
+      </div>
+
+      <div className="pagination-dots">
+        <span className="dot active"></span>
+        <span className="dot"></span>
+        <span className="dot"></span>
+      </div>
     </div>
   );
 }
