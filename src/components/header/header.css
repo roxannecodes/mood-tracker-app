@@ -16,13 +16,14 @@
 .app-header h1 {
   color: #333;
   margin: 0;
+  font-size:2em;
 }
 
 .app-header nav {
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  gap: 1rem;
+  gap: 2rem;
 }
 
 .app-header nav button {
@@ -55,4 +56,14 @@
 
 .log-mood-btn:hover {
   background: #535bf2 !important;
+}
+
+@media screen and (max-width: 620px) {
+.app-header {
+  flex-direction: column;
+  
+}
+.app-header nav button{
+  font-size: 0.75em;;
+}
 }

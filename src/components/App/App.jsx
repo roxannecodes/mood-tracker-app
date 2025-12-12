@@ -21,7 +21,7 @@ function App() {
 
   return (
     <div className="app">
-      <Header onLogMoodClick={() => setIsModalOpen(true)} />
+      <Header onLogMoodClick={() => setIsModalOpen(true)}  onLogStatsClick={() => setIsModalOpen(true)}  />
 
       <main className="app-main">
         <MoodDashboard entries={[]} stats={null} />
