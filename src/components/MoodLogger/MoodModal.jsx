@@ -6,7 +6,7 @@ const MOOD_OPTIONS = [
   { value: "happy", label: "😊", name: "Happy", rating: 4 },
   { value: "neutral", label: "😐", name: "Neutral", rating: 3 },
   { value: "sad", label: "😢", name: "Sad", rating: 2 },
-  { value: "stressed", label: "😰", name: "Stressed", rating: 1 },
+  { value: "angry", label: "😰", name: "Angry", rating: 1 },
 ];
 
 const ACTIVITY_OPTIONS = [

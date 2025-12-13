@@ -21,7 +21,10 @@
   width: 90%;
   max-height: 90vh;
   overflow-y: auto;
-  position: relative;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   animation: slideUp 0.3s ease;
   z-index: 1001;
 }
@@ -138,7 +141,9 @@
 }
 
 .mood__form_mood-emoji {
-  font-size: 2rem;
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
 }
 
 .mood__form_mood-name {
